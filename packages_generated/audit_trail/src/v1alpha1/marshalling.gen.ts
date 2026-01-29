@@ -57,6 +57,8 @@ import type {
   SecretManagerSecretInfo,
   SecretManagerSecretVersionInfo,
   SystemEvent,
+  VpcGwGatewayInfo,
+  VpcGwGatewayNetworkInfo,
   VpcPrivateNetworkInfo,
   VpcRouteInfo,
   VpcSubnetInfo,
@@ -568,6 +570,36 @@ const unmarshalSecretManagerSecretVersionInfo = (
   } as SecretManagerSecretVersionInfo
 }
 
+const unmarshalVpcGwGatewayInfo = (data: unknown): VpcGwGatewayInfo => {
+  if (!isJSONObject(data)) {
+    throw new TypeError(
+      `Unmarshalling the type 'VpcGwGatewayInfo' failed as data isn't a dictionary.`,
+    )
+  }
+
+  return {
+    gatewayTypeId: data.gateway_type_id,
+    publicIpId: data.public_ip_id,
+    vpcId: data.vpc_id,
+  } as VpcGwGatewayInfo
+}
+
+const unmarshalVpcGwGatewayNetworkInfo = (
+  data: unknown,
+): VpcGwGatewayNetworkInfo => {
+  if (!isJSONObject(data)) {
+    throw new TypeError(
+      `Unmarshalling the type 'VpcGwGatewayNetworkInfo' failed as data isn't a dictionary.`,
+    )
+  }
+
+  return {
+    address: data.address,
+    gatewayId: data.gateway_id,
+    pnId: data.pn_id,
+  } as VpcGwGatewayNetworkInfo
+}
+
 const unmarshalVpcPrivateNetworkInfo = (
   data: unknown,
 ): VpcPrivateNetworkInfo => {
@@ -741,6 +773,12 @@ export const unmarshalResource = (data: unknown): Resource => {
       : undefined,
     type: data.type,
     updatedAt: unmarshalDate(data.updated_at),
+    vpcGwGatewayInfo: data.vpc_gw_gateway_info
+      ? unmarshalVpcGwGatewayInfo(data.vpc_gw_gateway_info)
+      : undefined,
+    vpcGwGatewayNetworkInfo: data.vpc_gw_gateway_network_info
+      ? unmarshalVpcGwGatewayNetworkInfo(data.vpc_gw_gateway_network_info)
+      : undefined,
     vpcPrivateNetworkInfo: data.vpc_private_network_info
       ? unmarshalVpcPrivateNetworkInfo(data.vpc_private_network_info)
       : undefined,

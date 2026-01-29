@@ -72,6 +72,8 @@ export type {
   SecretManagerSecretVersionInfo,
   SystemEvent,
   SystemEventKind,
+  VpcGwGatewayInfo,
+  VpcGwGatewayNetworkInfo,
   VpcPrivateNetworkInfo,
   VpcRouteInfo,
   VpcSubnetInfo,
