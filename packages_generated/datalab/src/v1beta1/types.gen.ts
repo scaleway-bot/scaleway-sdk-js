@@ -218,11 +218,11 @@ export interface Datalab {
    */
   totalStorage?: Volume
   /**
-   * The private newtwork to which the data lab is connected. This is important for accessing the Spark Master URL.
+   * The private network to which the data lab is connected. This is important for accessing the Spark Master URL.
    */
   privateNetworkId: string
   /**
-   * The URL to the Spark Master endpoint from, and only from the perspective of the JupyterLab Notebook. This is NOT the URL to use for accessing the clutser from a private server.
+   * The URL to the Spark Master endpoint from, and only from the perspective of the JupyterLab Notebook. This is NOT the URL to use for accessing the cluster from a private server.
    */
   notebookMasterUrl?: string
 }
@@ -328,7 +328,7 @@ export type CreateDatalabRequest = {
    */
   main?: CreateDatalabRequestSparkMain
   /**
-   * The Spark worker node configuration of the Data Lab, has two parameters `node_type` for selecting the type of the worker node, and `node_count` for specifying the ammount of nodes.
+   * The Spark worker node configuration of the Data Lab, has two parameters `node_type` for selecting the type of the worker node, and `node_count` for specifying the amount of nodes.
    */
   worker?: CreateDatalabRequestSparkWorker
   /**
@@ -344,7 +344,7 @@ export type CreateDatalabRequest = {
    */
   totalStorage?: Volume
   /**
-   * The private newtwork to which the Data Lab is connected. Important for accessing the Spark Master URL from a private cluster.
+   * The private network to which the Data Lab is connected. Important for accessing the Spark Master URL from a private cluster.
    */
   privateNetworkId: string
 }
