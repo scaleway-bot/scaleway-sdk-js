@@ -486,6 +486,7 @@ const unmarshalPlanDetails = (data: unknown): PlanDetails => {
   }
 
   return {
+    backendLimit: data.backend_limit,
     packageGb: data.package_gb,
     pipelineLimit: data.pipeline_limit,
     planName: data.plan_name,
