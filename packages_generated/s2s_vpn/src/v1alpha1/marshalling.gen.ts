@@ -15,7 +15,10 @@ import type {
   CreateCustomerGatewayRequest,
   CreateRoutingPolicyRequest,
   CreateVpnGatewayRequest,
+  CreateVpnGatewayRequestDualIpTunnel,
   CreateVpnGatewayRequestPublicConfig,
+  CreateVpnGatewayRequestPublicTunnelConfig,
+  CreateVpnGatewayRequestSingleIpTunnel,
   CustomerGateway,
   DetachRoutingPolicyRequest,
   GatewayType,
@@ -420,12 +423,65 @@ export const marshalCreateRoutingPolicyRequest = (
   tags: request.tags,
 })
 
+const marshalCreateVpnGatewayRequestDualIpTunnel = (
+  request: CreateVpnGatewayRequestDualIpTunnel,
+  defaults: DefaultValues,
+): Record<string, unknown> => ({
+  ipam_ipv4_id: request.ipamIpv4Id,
+  ipam_ipv6_id: request.ipamIpv6Id,
+})
+
+const marshalCreateVpnGatewayRequestSingleIpTunnel = (
+  request: CreateVpnGatewayRequestSingleIpTunnel,
+  defaults: DefaultValues,
+): Record<string, unknown> => ({
+  ipam_id: request.ipamId,
+})
+
 const marshalCreateVpnGatewayRequestPublicConfig = (
   request: CreateVpnGatewayRequestPublicConfig,
   defaults: DefaultValues,
 ): Record<string, unknown> => ({
   ipam_ipv4_id: request.ipamIpv4Id,
   ipam_ipv6_id: request.ipamIpv6Id,
+})
+
+const marshalCreateVpnGatewayRequestPublicTunnelConfig = (
+  request: CreateVpnGatewayRequestPublicTunnelConfig,
+  defaults: DefaultValues,
+): Record<string, unknown> => ({
+  ...resolveOneOf([
+    {
+      param: 'single_ipv4_tunnel',
+      value:
+        request.singleIpv4Tunnel !== undefined
+          ? marshalCreateVpnGatewayRequestSingleIpTunnel(
+              request.singleIpv4Tunnel,
+              defaults,
+            )
+          : undefined,
+    },
+    {
+      param: 'single_ipv6_tunnel',
+      value:
+        request.singleIpv6Tunnel !== undefined
+          ? marshalCreateVpnGatewayRequestSingleIpTunnel(
+              request.singleIpv6Tunnel,
+              defaults,
+            )
+          : undefined,
+    },
+    {
+      param: 'dual_ipv4v6_tunnel',
+      value:
+        request.dualIpv4V6Tunnel !== undefined
+          ? marshalCreateVpnGatewayRequestDualIpTunnel(
+              request.dualIpv4V6Tunnel,
+              defaults,
+            )
+          : undefined,
+    },
+  ]),
 })
 
 export const marshalCreateVpnGatewayRequest = (
@@ -447,6 +503,16 @@ export const marshalCreateVpnGatewayRequest = (
         request.publicConfig !== undefined
           ? marshalCreateVpnGatewayRequestPublicConfig(
               request.publicConfig,
+              defaults,
+            )
+          : undefined,
+    },
+    {
+      param: 'public_tunnel_config',
+      value:
+        request.publicTunnelConfig !== undefined
+          ? marshalCreateVpnGatewayRequestPublicTunnelConfig(
+              request.publicTunnelConfig,
               defaults,
             )
           : undefined,

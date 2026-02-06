@@ -102,6 +102,15 @@ export interface ConnectionCipher {
   dhGroup?: ConnectionDhGroup
 }
 
+export interface CreateVpnGatewayRequestDualIpTunnel {
+  ipamIpv4Id?: string
+  ipamIpv6Id?: string
+}
+
+export interface CreateVpnGatewayRequestSingleIpTunnel {
+  ipamId?: string
+}
+
 export interface VpnGatewayPrivateConfig {}
 
 export interface VpnGatewayPublicConfig {
@@ -221,6 +230,24 @@ export interface Connection {
 export interface CreateVpnGatewayRequestPublicConfig {
   ipamIpv4Id?: string
   ipamIpv6Id?: string
+}
+
+export interface CreateVpnGatewayRequestPublicTunnelConfig {
+  /**
+   *
+   * One-of ('config'): at most one of 'singleIpv4Tunnel', 'singleIpv6Tunnel', 'dualIpv4V6Tunnel' could be set.
+   */
+  singleIpv4Tunnel?: CreateVpnGatewayRequestSingleIpTunnel
+  /**
+   *
+   * One-of ('config'): at most one of 'singleIpv4Tunnel', 'singleIpv6Tunnel', 'dualIpv4V6Tunnel' could be set.
+   */
+  singleIpv6Tunnel?: CreateVpnGatewayRequestSingleIpTunnel
+  /**
+   *
+   * One-of ('config'): at most one of 'singleIpv4Tunnel', 'singleIpv6Tunnel', 'dualIpv4V6Tunnel' could be set.
+   */
+  dualIpv4V6Tunnel?: CreateVpnGatewayRequestDualIpTunnel
 }
 
 export interface CustomerGateway {
@@ -560,15 +587,20 @@ export type CreateVpnGatewayRequest = {
    */
   gatewayType: string
   /**
-   * Public endpoint configuration of the VPN gateway.
+   * @deprecated Public endpoint configuration of the VPN gateway.
    *
-   * One-of ('endpoint'): at most one of 'publicConfig' could be set.
+   * One-of ('endpoint'): at most one of 'publicConfig', 'publicTunnelConfig' could be set.
    */
   publicConfig?: CreateVpnGatewayRequestPublicConfig
   /**
    * ID of the Private Network to attach to the VPN gateway.
    */
   privateNetworkId: string
+  /**
+   *
+   * One-of ('endpoint'): at most one of 'publicConfig', 'publicTunnelConfig' could be set.
+   */
+  publicTunnelConfig?: CreateVpnGatewayRequestPublicTunnelConfig
   /**
    * ID of the IPAM private IPv4 address to attach to the VPN gateway.
    */
