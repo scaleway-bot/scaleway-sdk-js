@@ -539,6 +539,10 @@ export type ListVolumesRequest = {
    * Filter by volume type.
    */
   volumeType?: string
+  /**
+   * Filter by volume IDs.
+   */
+  volumeIds?: string[]
 }
 
 export interface ListVolumesResponse {

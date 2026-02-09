@@ -988,7 +988,7 @@ const marshalRuleSpecs = (
 ): Record<string, unknown> => ({
   condition: request.condition,
   permission_set_names: request.permissionSetNames,
-  ...resolveOneOf<unknown[] | string>([
+  ...resolveOneOf<string[] | string>([
     { param: 'project_ids', value: request.projectIds },
     { param: 'organization_id', value: request.organizationId },
   ]),

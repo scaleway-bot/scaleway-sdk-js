@@ -535,7 +535,7 @@ Optionally, specify a Scaleway data source ID to retrieve only data exports asso
 
   /**
    * Delete a data export. Delete a given data export, specified by its ID.
-Note that this action will immediatly and permanently delete this data exports.
+Note that this action will immediately and permanently delete this data exports.
    *
    * @param request - The request {@link RegionalApiDeleteExporterRequest}
    */
@@ -546,7 +546,7 @@ Note that this action will immediatly and permanently delete this data exports.
     })
 
   /**
-   * Update a data export. Update a data export attributes. Changes are effective immediatly even during Beta phase.
+   * Update a data export. Update a data export attributes. Changes are effective immediately even during Beta phase.
 Note that you can not change the data source linked to the export. If you need to do so, you will need to re-create the export.
    *
    * @param request - The request {@link RegionalApiUpdateExporterRequest}

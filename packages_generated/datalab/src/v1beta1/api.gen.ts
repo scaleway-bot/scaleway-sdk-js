@@ -198,7 +198,7 @@ export class API extends ParentAPI {
     )
 
   /**
-   * List the available compute node types upon which a Data Lab can be created.
+   * List the available compute node types for creating a Data Lab.
    *
    * @param request - The request {@link ListNodeTypesRequest}
    * @returns A Promise of ListNodeTypesResponse
@@ -226,7 +226,7 @@ export class API extends ParentAPI {
     )
 
   /**
-   * List available notebook versions.
+   * Lists available notebook versions.
    *
    * @param request - The request {@link ListNotebookVersionsRequest}
    * @returns A Promise of ListNotebookVersionsResponse

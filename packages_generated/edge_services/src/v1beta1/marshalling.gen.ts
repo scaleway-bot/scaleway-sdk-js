@@ -486,6 +486,7 @@ const unmarshalPlanDetails = (data: unknown): PlanDetails => {
   }
 
   return {
+    backendLimit: data.backend_limit,
     packageGb: data.package_gb,
     pipelineLimit: data.pipeline_limit,
     planName: data.plan_name,
@@ -1021,7 +1022,7 @@ export const marshalCreatePurgeRequestRequest = (
   defaults: DefaultValues,
 ): Record<string, unknown> => ({
   pipeline_id: request.pipelineId,
-  ...resolveOneOf<unknown[] | boolean>([
+  ...resolveOneOf<string[] | boolean>([
     { param: 'assets', value: request.assets },
     { param: 'all', value: request.all },
   ]),

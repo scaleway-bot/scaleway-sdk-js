@@ -574,6 +574,10 @@ export interface PlanDetails {
    * Number of WAF requests included in subscription plan.
    */
   wafRequests: number
+  /**
+   * Number of backends per pipeline included in subscription plan.
+   */
+  backendLimit: number
 }
 
 export interface PlanUsageDetails {
