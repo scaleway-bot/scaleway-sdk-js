@@ -1,8 +1,11 @@
 // This file was automatically generated. DO NOT EDIT.
 // If you have any remark or suggestion do not hesitate to open an issue.
-import type { Region as ScwRegion, Zone as ScwZone } from '@scaleway/sdk-client'
+import type { Region as ScwRegion, Zone as ScwZone, } from '@scaleway/sdk-client'
 
-export type AutoscalerEstimator = 'unknown_estimator' | 'binpacking'
+
+export type AutoscalerEstimator =
+  | 'unknown_estimator'
+  | 'binpacking'
 
 export type AutoscalerExpander =
   | 'unknown_expander'
@@ -32,7 +35,10 @@ export type ClusterStatus =
   | 'locked'
   | 'pool_required'
 
-export type ClusterTypeAvailability = 'available' | 'scarce' | 'shortage'
+export type ClusterTypeAvailability =
+  | 'available'
+  | 'scarce'
+  | 'shortage'
 
 export type ClusterTypeResiliency =
   | 'unknown_resiliency'
@@ -116,7 +122,11 @@ export type PoolVolumeType =
   | 'sbs_5k'
   | 'sbs_15k'
 
-export type Runtime = 'unknown_runtime' | 'docker' | 'containerd' | 'crio'
+export type Runtime =
+  | 'unknown_runtime'
+  | 'docker'
+  | 'containerd'
+  | 'crio'
 
 export interface MaintenanceWindow {
   /**
@@ -129,6 +139,7 @@ export interface MaintenanceWindow {
   day: MaintenanceWindowDayOfTheWeek
 }
 
+
 export interface CreateClusterRequestPoolConfigUpgradePolicy {
   /**
    * The maximum number of nodes that can be not ready at the same time.
@@ -140,6 +151,7 @@ export interface CreateClusterRequestPoolConfigUpgradePolicy {
   maxSurge?: number
 }
 
+
 export interface ClusterAutoUpgrade {
   /**
    * Defines whether auto upgrade is enabled for the cluster.
@@ -150,6 +162,7 @@ export interface ClusterAutoUpgrade {
    */
   maintenanceWindow?: MaintenanceWindow
 }
+
 
 export interface ClusterAutoscalerConfig {
   /**
@@ -194,6 +207,7 @@ export interface ClusterAutoscalerConfig {
   maxGracefulTerminationSec: number
 }
 
+
 export interface ClusterOpenIDConnectConfig {
   /**
    * URL of the provider which allows the API server to discover public signing keys. Only URLs using the `https://` scheme are accepted. This is typically the provider's discovery URL without a path, for example "https://accounts.google.com" or "https://login.salesforce.com".
@@ -225,10 +239,12 @@ export interface ClusterOpenIDConnectConfig {
   requiredClaim: string[]
 }
 
+
 export interface PoolUpgradePolicy {
   maxUnavailable: number
   maxSurge: number
 }
+
 
 export interface ACLRuleRequest {
   /**
@@ -248,6 +264,7 @@ export interface ACLRuleRequest {
    */
   description: string
 }
+
 
 export interface ACLRule {
   /**
@@ -272,6 +289,7 @@ export interface ACLRule {
   description: string
 }
 
+
 export interface CreateClusterRequestAutoUpgrade {
   /**
    * Defines whether auto upgrade is enabled for the cluster.
@@ -282,6 +300,7 @@ export interface CreateClusterRequestAutoUpgrade {
    */
   maintenanceWindow?: MaintenanceWindow
 }
+
 
 export interface CreateClusterRequestAutoscalerConfig {
   /**
@@ -326,6 +345,7 @@ export interface CreateClusterRequestAutoscalerConfig {
   maxGracefulTerminationSec?: number
 }
 
+
 export interface CreateClusterRequestOpenIDConnectConfig {
   /**
    * URL of the provider which allows the API server to discover public signing keys. Only URLs using the `https://` scheme are accepted. This is typically the provider's discovery URL without a path, for example "https://accounts.google.com" or "https://login.salesforce.com".
@@ -356,6 +376,7 @@ export interface CreateClusterRequestOpenIDConnectConfig {
    */
   requiredClaim?: string[]
 }
+
 
 export interface CreateClusterRequestPoolConfig {
   /**
@@ -412,9 +433,9 @@ export interface CreateClusterRequestPoolConfig {
   zone: ScwZone
   /**
    * * `l_ssd` is a local block storage which means your system is stored locally on your node's hypervisor. This type is not available for all node types
-   * `sbs_5k` is a remote block storage which means your system is stored on a centralized and resilient cluster with 5k IOPS limits
-   * `sbs_15k` is a faster remote block storage which means your system is stored on a centralized and resilient cluster with 15k IOPS limits
-   * `b_ssd` is the legacy remote block storage which means your system is stored on a centralized and resilient cluster. Not available for new pools, use `sbs_5k` or `sbs_15k` instead.
+* `sbs_5k` is a remote block storage which means your system is stored on a centralized and resilient cluster with 5k IOPS limits
+* `sbs_15k` is a faster remote block storage which means your system is stored on a centralized and resilient cluster with 15k IOPS limits
+* `b_ssd` is the legacy remote block storage which means your system is stored on a centralized and resilient cluster. Not available for new pools, use `sbs_5k` or `sbs_15k` instead.
    */
   rootVolumeType: PoolVolumeType
   /**
@@ -431,16 +452,19 @@ export interface CreateClusterRequestPoolConfig {
   securityGroupId?: string
 }
 
+
 export interface CreatePoolRequestUpgradePolicy {
   maxUnavailable?: number
   maxSurge?: number
 }
+
 
 export interface ExternalNodeCoreV1Taint {
   key: string
   value: string
   effect: string
 }
+
 
 export interface ClusterType {
   /**
@@ -484,6 +508,7 @@ export interface ClusterType {
    */
   maxEtcdSize: number
 }
+
 
 export interface Version {
   /**
@@ -531,6 +556,7 @@ export interface Version {
    */
   releasedAt?: Date
 }
+
 
 export interface Cluster {
   /**
@@ -651,6 +677,7 @@ export interface Cluster {
   serviceDnsIp: string
 }
 
+
 export interface Node {
   /**
    * Node ID.
@@ -705,6 +732,7 @@ export interface Node {
    */
   updatedAt?: Date
 }
+
 
 export interface Pool {
   /**
@@ -785,9 +813,9 @@ export interface Pool {
   zone: ScwZone
   /**
    * * `l_ssd` is a local block storage which means your system is stored locally on your node's hypervisor. This type is not available for all node types
-   * `sbs_5k` is a remote block storage which means your system is stored on a centralized and resilient cluster with 5k IOPS limits
-   * `sbs_15k` is a faster remote block storage which means your system is stored on a centralized and resilient cluster with 15k IOPS limits
-   * `b_ssd` is the legacy remote block storage which means your system is stored on a centralized and resilient cluster. Not available for new pools, use `sbs_5k` or `sbs_15k` instead.
+* `sbs_5k` is a remote block storage which means your system is stored on a centralized and resilient cluster with 5k IOPS limits
+* `sbs_15k` is a faster remote block storage which means your system is stored on a centralized and resilient cluster with 15k IOPS limits
+* `b_ssd` is the legacy remote block storage which means your system is stored on a centralized and resilient cluster. Not available for new pools, use `sbs_5k` or `sbs_15k` instead.
    */
   rootVolumeType: PoolVolumeType
   /**
@@ -808,11 +836,13 @@ export interface Pool {
   region: ScwRegion
 }
 
+
 export interface NodeMetadataCoreV1Taint {
   key: string
   value: string
   effect: string
 }
+
 
 export interface UpdateClusterRequestAutoUpgrade {
   /**
@@ -824,6 +854,7 @@ export interface UpdateClusterRequestAutoUpgrade {
    */
   maintenanceWindow?: MaintenanceWindow
 }
+
 
 export interface UpdateClusterRequestAutoscalerConfig {
   /**
@@ -868,6 +899,7 @@ export interface UpdateClusterRequestAutoscalerConfig {
   maxGracefulTerminationSec?: number
 }
 
+
 export interface UpdateClusterRequestOpenIDConnectConfig {
   /**
    * URL of the provider which allows the API server to discover public signing keys. Only URLs using the `https://` scheme are accepted. This is typically the provider's discovery URL without a path, for example "https://accounts.google.com" or "https://login.salesforce.com".
@@ -899,10 +931,12 @@ export interface UpdateClusterRequestOpenIDConnectConfig {
   requiredClaim?: string[]
 }
 
+
 export interface UpdatePoolRequestUpgradePolicy {
   maxUnavailable?: number
   maxSurge?: number
 }
+
 
 export type AddClusterACLRulesRequest = {
   /**
@@ -919,12 +953,14 @@ export type AddClusterACLRulesRequest = {
   acls?: ACLRuleRequest[]
 }
 
+
 export interface AddClusterACLRulesResponse {
   /**
    * ACLs that were added.
    */
   rules: ACLRule[]
 }
+
 
 export type AuthExternalNodeRequest = {
   /**
@@ -936,6 +972,7 @@ export type AuthExternalNodeRequest = {
    */
   poolId: string
 }
+
 
 export type CreateClusterRequest = {
   /**
@@ -1024,6 +1061,7 @@ export type CreateClusterRequest = {
   serviceDnsIp?: string
 }
 
+
 export type CreateExternalNodeRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1031,6 +1069,7 @@ export type CreateExternalNodeRequest = {
   region?: ScwRegion
   poolId: string
 }
+
 
 export type CreatePoolRequest = {
   /**
@@ -1095,9 +1134,9 @@ export type CreatePoolRequest = {
   zone?: ScwZone
   /**
    * * `l_ssd` is a local block storage which means your system is stored locally on your node's hypervisor. This type is not available for all node types
-   * `sbs_5k` is a remote block storage which means your system is stored on a centralized and resilient cluster with 5k IOPS limits
-   * `sbs_15k` is a faster remote block storage which means your system is stored on a centralized and resilient cluster with 15k IOPS limits
-   * `b_ssd` is the legacy remote block storage which means your system is stored on a centralized and resilient cluster. Not available for new pools, use `sbs_5k` or `sbs_15k` instead.
+* `sbs_5k` is a remote block storage which means your system is stored on a centralized and resilient cluster with 5k IOPS limits
+* `sbs_15k` is a faster remote block storage which means your system is stored on a centralized and resilient cluster with 15k IOPS limits
+* `b_ssd` is the legacy remote block storage which means your system is stored on a centralized and resilient cluster. Not available for new pools, use `sbs_5k` or `sbs_15k` instead.
    */
   rootVolumeType?: PoolVolumeType
   /**
@@ -1114,6 +1153,7 @@ export type CreatePoolRequest = {
   securityGroupId?: string
 }
 
+
 export type DeleteACLRuleRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1124,6 +1164,7 @@ export type DeleteACLRuleRequest = {
    */
   aclId: string
 }
+
 
 export type DeleteClusterRequest = {
   /**
@@ -1139,6 +1180,7 @@ export type DeleteClusterRequest = {
    */
   withAdditionalResources: boolean
 }
+
 
 export type DeleteNodeRequest = {
   /**
@@ -1159,6 +1201,7 @@ export type DeleteNodeRequest = {
   replace: boolean
 }
 
+
 export type DeletePoolRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1169,6 +1212,7 @@ export type DeletePoolRequest = {
    */
   poolId: string
 }
+
 
 export interface ExternalNode {
   id: string
@@ -1187,10 +1231,12 @@ export interface ExternalNode {
   iamToken: string
 }
 
+
 export interface ExternalNodeAuth {
   nodeSecretKey: string
   metadataUrl: string
 }
+
 
 export type GetClusterKubeConfigRequest = {
   /**
@@ -1207,6 +1253,7 @@ export type GetClusterKubeConfigRequest = {
   redacted?: boolean
 }
 
+
 export type GetClusterRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1218,12 +1265,14 @@ export type GetClusterRequest = {
   clusterId: string
 }
 
+
 export type GetNodeMetadataRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
    */
   region?: ScwRegion
 }
+
 
 export type GetNodeRequest = {
   /**
@@ -1236,6 +1285,7 @@ export type GetNodeRequest = {
   nodeId: string
 }
 
+
 export type GetPoolRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1247,6 +1297,7 @@ export type GetPoolRequest = {
   poolId: string
 }
 
+
 export type GetVersionRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1257,6 +1308,7 @@ export type GetVersionRequest = {
    */
   versionName: string
 }
+
 
 export type ListClusterACLRulesRequest = {
   /**
@@ -1277,6 +1329,7 @@ export type ListClusterACLRulesRequest = {
   pageSize?: number
 }
 
+
 export interface ListClusterACLRulesResponse {
   /**
    * Total number of ACLs that exist for the cluster.
@@ -1287,6 +1340,7 @@ export interface ListClusterACLRulesResponse {
    */
   rules: ACLRule[]
 }
+
 
 export type ListClusterAvailableTypesRequest = {
   /**
@@ -1299,6 +1353,7 @@ export type ListClusterAvailableTypesRequest = {
   clusterId: string
 }
 
+
 export interface ListClusterAvailableTypesResponse {
   /**
    * Available cluster types for the cluster.
@@ -1309,6 +1364,7 @@ export interface ListClusterAvailableTypesResponse {
    */
   totalCount: number
 }
+
 
 export type ListClusterAvailableVersionsRequest = {
   /**
@@ -1321,12 +1377,14 @@ export type ListClusterAvailableVersionsRequest = {
   clusterId: string
 }
 
+
 export interface ListClusterAvailableVersionsResponse {
   /**
    * Available Kubernetes versions for the cluster.
    */
   versions: Version[]
 }
+
 
 export type ListClusterTypesRequest = {
   /**
@@ -1343,6 +1401,7 @@ export type ListClusterTypesRequest = {
   pageSize?: number
 }
 
+
 export interface ListClusterTypesResponse {
   /**
    * Total number of cluster-types.
@@ -1353,6 +1412,7 @@ export interface ListClusterTypesResponse {
    */
   clusterTypes: ClusterType[]
 }
+
 
 export type ListClustersRequest = {
   /**
@@ -1397,6 +1457,7 @@ export type ListClustersRequest = {
   privateNetworkId?: string
 }
 
+
 export interface ListClustersResponse {
   /**
    * Total number of clusters.
@@ -1407,6 +1468,7 @@ export interface ListClustersResponse {
    */
   clusters: Cluster[]
 }
+
 
 export type ListNodesRequest = {
   /**
@@ -1443,6 +1505,7 @@ export type ListNodesRequest = {
   status?: NodeStatus
 }
 
+
 export interface ListNodesResponse {
   /**
    * Total number of nodes.
@@ -1453,6 +1516,7 @@ export interface ListNodesResponse {
    */
   nodes: Node[]
 }
+
 
 export type ListPoolsRequest = {
   /**
@@ -1485,6 +1549,7 @@ export type ListPoolsRequest = {
   status?: PoolStatus
 }
 
+
 export interface ListPoolsResponse {
   /**
    * Total number of pools that exists for the cluster.
@@ -1496,6 +1561,7 @@ export interface ListPoolsResponse {
   pools: Pool[]
 }
 
+
 export type ListVersionsRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1503,12 +1569,14 @@ export type ListVersionsRequest = {
   region?: ScwRegion
 }
 
+
 export interface ListVersionsResponse {
   /**
    * Available Kubernetes versions.
    */
   versions: Version[]
 }
+
 
 export interface NodeMetadata {
   id: string
@@ -1532,6 +1600,7 @@ export interface NodeMetadata {
   updaterBinPath: string
 }
 
+
 export type RebootNodeRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1542,6 +1611,7 @@ export type RebootNodeRequest = {
    */
   nodeId: string
 }
+
 
 export type ReplaceNodeRequest = {
   /**
@@ -1554,6 +1624,7 @@ export type ReplaceNodeRequest = {
   nodeId: string
 }
 
+
 export type ResetClusterAdminTokenRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1564,6 +1635,7 @@ export type ResetClusterAdminTokenRequest = {
    */
   clusterId: string
 }
+
 
 export type SetClusterACLRulesRequest = {
   /**
@@ -1580,12 +1652,14 @@ export type SetClusterACLRulesRequest = {
   acls?: ACLRuleRequest[]
 }
 
+
 export interface SetClusterACLRulesResponse {
   /**
    * ACLs that were set.
    */
   rules: ACLRule[]
 }
+
 
 export type SetClusterTypeRequest = {
   /**
@@ -1601,6 +1675,7 @@ export type SetClusterTypeRequest = {
    */
   type: string
 }
+
 
 export type UpdateClusterRequest = {
   /**
@@ -1649,6 +1724,7 @@ export type UpdateClusterRequest = {
   apiserverCertSans?: string[]
 }
 
+
 export type UpdatePoolRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1696,6 +1772,7 @@ export type UpdatePoolRequest = {
   securityGroupId?: string
 }
 
+
 export type UpgradeClusterRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1715,6 +1792,7 @@ export type UpgradeClusterRequest = {
   upgradePools: boolean
 }
 
+
 export type UpgradePoolRequest = {
   /**
    * Region to target. If none is passed will use default region from the config.
@@ -1729,3 +1807,5 @@ export type UpgradePoolRequest = {
    */
   version: string
 }
+
+
