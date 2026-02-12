@@ -1,10 +1,7 @@
 // This file was automatically generated. DO NOT EDIT.
 // If you have any remark or suggestion do not hesitate to open an issue.
-import type {
-  Money,
-  Region as ScwRegion,
-  Zone as ScwZone,
-} from '@scaleway/sdk-client'
+import type { Money, Region as ScwRegion, Zone as ScwZone, } from '@scaleway/sdk-client'
+
 
 export type ListPublicCatalogProductsRequestProductType =
   | 'unknown_product_type'
@@ -137,12 +134,14 @@ export interface PublicCatalogProductPropertiesHardwareCPUPhysical {
   benchmark: number
 }
 
+
 export interface PublicCatalogProductPropertiesHardwareCPUVirtual {
   /**
    * The number of vCPUs.
    */
   count: number
 }
+
 
 export interface PublicCatalogProductPropertiesHardwareCPU {
   /**
@@ -175,6 +174,7 @@ export interface PublicCatalogProductPropertiesHardwareCPU {
   threads: number
 }
 
+
 export interface PublicCatalogProductPropertiesHardwareGPU {
   /**
    * A human-readable description of the GPU.
@@ -189,6 +189,7 @@ export interface PublicCatalogProductPropertiesHardwareGPU {
    */
   type: string
 }
+
 
 export interface PublicCatalogProductPropertiesHardwareNetwork {
   /**
@@ -209,6 +210,7 @@ export interface PublicCatalogProductPropertiesHardwareNetwork {
   maxPublicBandwidth: number
 }
 
+
 export interface PublicCatalogProductPropertiesHardwareRAM {
   /**
    * A human-readable description of the RAM.
@@ -224,6 +226,7 @@ export interface PublicCatalogProductPropertiesHardwareRAM {
   type: string
 }
 
+
 export interface PublicCatalogProductPropertiesHardwareStorage {
   /**
    * A human-readable description of the storage.
@@ -235,11 +238,18 @@ export interface PublicCatalogProductPropertiesHardwareStorage {
   total: number
 }
 
-export interface PublicCatalogProductPropertiesKubernetesKapsuleControlPlaneType {}
 
-export interface PublicCatalogProductPropertiesKubernetesKosmosControlPlaneType {}
+export interface PublicCatalogProductPropertiesKubernetesKapsuleControlPlaneType {
+}
 
-export interface PublicCatalogProductPropertiesKubernetesKosmosNodeType {}
+
+export interface PublicCatalogProductPropertiesKubernetesKosmosControlPlaneType {
+}
+
+
+export interface PublicCatalogProductPropertiesKubernetesKosmosNodeType {
+}
+
 
 export interface PublicCatalogProductPropertiesObjectStorageClassType {
   /**
@@ -248,12 +258,14 @@ export interface PublicCatalogProductPropertiesObjectStorageClassType {
   storageClass: PublicCatalogProductPropertiesObjectStorageClassTypeStorageClass
 }
 
+
 export interface PublicCatalogProductPropertiesObjectStorageInternetTrafficType {
   /**
    * The type of internet traffic.
    */
   trafficType: PublicCatalogProductPropertiesObjectStorageInternetTrafficTypeTrafficType
 }
+
 
 export interface PublicCatalogProductPropertiesObjectStorageRegionTrafficType {
   /**
@@ -262,12 +274,14 @@ export interface PublicCatalogProductPropertiesObjectStorageRegionTrafficType {
   regionDestination: string
 }
 
+
 export interface PublicCatalogProductPropertiesObjectStorageRestoreType {
   /**
    * The type of restore.
    */
   restoreType: PublicCatalogProductPropertiesObjectStorageRestoreTypeRestoreType
 }
+
 
 export interface PublicCatalogProductPropertiesAppleSilicon {
   /**
@@ -280,6 +294,7 @@ export interface PublicCatalogProductPropertiesAppleSilicon {
   serverType: string
 }
 
+
 export interface PublicCatalogProductPropertiesBlockStorage {
   /**
    * @deprecated The minimum size of storage volume for this product in bytes. Deprecated.
@@ -290,6 +305,7 @@ export interface PublicCatalogProductPropertiesBlockStorage {
    */
   maxVolumeSize?: number
 }
+
 
 export interface PublicCatalogProductPropertiesDedibox {
   /**
@@ -302,6 +318,7 @@ export interface PublicCatalogProductPropertiesDedibox {
   offerId: number
 }
 
+
 export interface PublicCatalogProductPropertiesElasticMetal {
   /**
    * The range of the Elastic Metal server.
@@ -313,11 +330,13 @@ export interface PublicCatalogProductPropertiesElasticMetal {
   offerId: string
 }
 
+
 export interface PublicCatalogProductPropertiesGenerativeApis {
   reasoning: boolean
   supportedApis: string[]
   consumptionMode: PublicCatalogProductPropertiesGenerativeApisConsumptionMode
 }
+
 
 export interface PublicCatalogProductPropertiesHardware {
   /**
@@ -342,6 +361,7 @@ export interface PublicCatalogProductPropertiesHardware {
   gpu?: PublicCatalogProductPropertiesHardwareGPU
 }
 
+
 export interface PublicCatalogProductPropertiesInstance {
   /**
    * The range of the Instance server.
@@ -357,7 +377,10 @@ export interface PublicCatalogProductPropertiesInstance {
   recommendedReplacementOfferIds: string[]
 }
 
-export interface PublicCatalogProductPropertiesKeyManager {}
+
+export interface PublicCatalogProductPropertiesKeyManager {
+}
+
 
 export interface PublicCatalogProductPropertiesKubernetes {
   /**
@@ -380,7 +403,10 @@ export interface PublicCatalogProductPropertiesKubernetes {
   kosmosNode?: PublicCatalogProductPropertiesKubernetesKosmosNodeType
 }
 
-export interface PublicCatalogProductPropertiesLoadBalancer {}
+
+export interface PublicCatalogProductPropertiesLoadBalancer {
+}
+
 
 export interface PublicCatalogProductPropertiesManagedInference {
   /**
@@ -389,7 +415,10 @@ export interface PublicCatalogProductPropertiesManagedInference {
   instanceGpuName: string
 }
 
-export interface PublicCatalogProductPropertiesManagedRedisDatabase {}
+
+export interface PublicCatalogProductPropertiesManagedRedisDatabase {
+}
+
 
 export interface PublicCatalogProductPropertiesObjectStorage {
   /**
@@ -418,12 +447,16 @@ export interface PublicCatalogProductPropertiesObjectStorage {
   regionTraffic?: PublicCatalogProductPropertiesObjectStorageRegionTrafficType
 }
 
-export interface PublicCatalogProductPropertiesSecretManager {}
+
+export interface PublicCatalogProductPropertiesSecretManager {
+}
+
 
 export interface PublicCatalogProductEnvironmentalImpactEstimation {
   kgCo2Equivalent?: number
   m3WaterUsage?: number
 }
+
 
 export interface PublicCatalogProductLocality {
   /**
@@ -452,12 +485,14 @@ export interface PublicCatalogProductLocality {
   datacenter?: string
 }
 
+
 export interface PublicCatalogProductPrice {
   /**
    * The retail price of the product.
    */
   retailPrice?: Money
 }
+
 
 export interface PublicCatalogProductProperties {
   /**
@@ -542,10 +577,12 @@ export interface PublicCatalogProductProperties {
   kubernetes?: PublicCatalogProductPropertiesKubernetes
 }
 
+
 export interface PublicCatalogProductUnitOfMeasure {
   unit: PublicCatalogProductUnitOfMeasureCountableUnit
   size: number
 }
+
 
 export interface PublicCatalogProduct {
   /**
@@ -614,6 +651,7 @@ export interface PublicCatalogProduct {
   badges: PublicCatalogProductProductBadge[]
 }
 
+
 export interface ListPublicCatalogProductsResponse {
   /**
    * The list of products.
@@ -624,6 +662,7 @@ export interface ListPublicCatalogProductsResponse {
    */
   totalCount: number
 }
+
 
 export type PublicCatalogApiListPublicCatalogProductsRequest = {
   /**
@@ -667,3 +706,5 @@ export type PublicCatalogApiListPublicCatalogProductsRequest = {
    */
   status?: ListPublicCatalogProductsRequestStatus[]
 }
+
+
