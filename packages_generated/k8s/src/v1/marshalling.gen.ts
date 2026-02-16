@@ -1,13 +1,8 @@
 // This file was automatically generated. DO NOT EDIT.
 // If you have any remark or suggestion do not hesitate to open an issue.
 import randomName from '@scaleway/random-name'
-import type { DefaultValues } from '@scaleway/sdk-client'
-import {
-  isJSONObject,
-  resolveOneOf,
-  unmarshalArrayOfObject,
-  unmarshalDate,
-} from '@scaleway/sdk-client'
+import type { DefaultValues, } from '@scaleway/sdk-client'
+import { isJSONObject, resolveOneOf, unmarshalArrayOfObject, unmarshalDate, } from '@scaleway/sdk-client'
 import type {
   ACLRule,
   ACLRuleRequest,
@@ -101,15 +96,11 @@ const unmarshalClusterAutoUpgrade = (data: unknown): ClusterAutoUpgrade => {
 
   return {
     enabled: data.enabled,
-    maintenanceWindow: data.maintenance_window
-      ? unmarshalMaintenanceWindow(data.maintenance_window)
-      : undefined,
+    maintenanceWindow: data.maintenance_window ? unmarshalMaintenanceWindow(data.maintenance_window) : undefined,
   } as ClusterAutoUpgrade
 }
 
-const unmarshalClusterAutoscalerConfig = (
-  data: unknown,
-): ClusterAutoscalerConfig => {
+const unmarshalClusterAutoscalerConfig = (data: unknown): ClusterAutoscalerConfig => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ClusterAutoscalerConfig' failed as data isn't a dictionary.`,
@@ -130,9 +121,7 @@ const unmarshalClusterAutoscalerConfig = (
   } as ClusterAutoscalerConfig
 }
 
-const unmarshalClusterOpenIDConnectConfig = (
-  data: unknown,
-): ClusterOpenIDConnectConfig => {
+const unmarshalClusterOpenIDConnectConfig = (data: unknown): ClusterOpenIDConnectConfig => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ClusterOpenIDConnectConfig' failed as data isn't a dictionary.`,
@@ -161,12 +150,8 @@ export const unmarshalCluster = (data: unknown): Cluster => {
     aclAvailable: data.acl_available,
     admissionPlugins: data.admission_plugins,
     apiserverCertSans: data.apiserver_cert_sans,
-    autoUpgrade: data.auto_upgrade
-      ? unmarshalClusterAutoUpgrade(data.auto_upgrade)
-      : undefined,
-    autoscalerConfig: data.autoscaler_config
-      ? unmarshalClusterAutoscalerConfig(data.autoscaler_config)
-      : undefined,
+    autoUpgrade: data.auto_upgrade ? unmarshalClusterAutoUpgrade(data.auto_upgrade) : undefined,
+    autoscalerConfig: data.autoscaler_config ? unmarshalClusterAutoscalerConfig(data.autoscaler_config) : undefined,
     clusterUrl: data.cluster_url,
     cni: data.cni,
     commitmentEndsAt: unmarshalDate(data.commitment_ends_at),
@@ -177,9 +162,7 @@ export const unmarshalCluster = (data: unknown): Cluster => {
     iamNodesGroupId: data.iam_nodes_group_id,
     id: data.id,
     name: data.name,
-    openIdConnectConfig: data.open_id_connect_config
-      ? unmarshalClusterOpenIDConnectConfig(data.open_id_connect_config)
-      : undefined,
+    openIdConnectConfig: data.open_id_connect_config ? unmarshalClusterOpenIDConnectConfig(data.open_id_connect_config) : undefined,
     organizationId: data.organization_id,
     podCidr: data.pod_cidr,
     privateNetworkId: data.private_network_id,
@@ -262,9 +245,7 @@ export const unmarshalPool = (data: unknown): Pool => {
     status: data.status,
     tags: data.tags,
     updatedAt: unmarshalDate(data.updated_at),
-    upgradePolicy: data.upgrade_policy
-      ? unmarshalPoolUpgradePolicy(data.upgrade_policy)
-      : undefined,
+    upgradePolicy: data.upgrade_policy ? unmarshalPoolUpgradePolicy(data.upgrade_policy) : undefined,
     version: data.version,
     zone: data.zone,
   } as Pool
@@ -285,9 +266,7 @@ const unmarshalACLRule = (data: unknown): ACLRule => {
   } as ACLRule
 }
 
-export const unmarshalAddClusterACLRulesResponse = (
-  data: unknown,
-): AddClusterACLRulesResponse => {
+export const unmarshalAddClusterACLRulesResponse = (data: unknown): AddClusterACLRulesResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'AddClusterACLRulesResponse' failed as data isn't a dictionary.`,
@@ -299,9 +278,7 @@ export const unmarshalAddClusterACLRulesResponse = (
   } as AddClusterACLRulesResponse
 }
 
-const unmarshalExternalNodeCoreV1Taint = (
-  data: unknown,
-): ExternalNodeCoreV1Taint => {
+const unmarshalExternalNodeCoreV1Taint = (data: unknown): ExternalNodeCoreV1Taint => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ExternalNodeCoreV1Taint' failed as data isn't a dictionary.`,
@@ -334,10 +311,7 @@ export const unmarshalExternalNode = (data: unknown): ExternalNode => {
     kubeletConfig: data.kubelet_config,
     name: data.name,
     nodeLabels: data.node_labels,
-    nodeTaints: unmarshalArrayOfObject(
-      data.node_taints,
-      unmarshalExternalNodeCoreV1Taint,
-    ),
+    nodeTaints: unmarshalArrayOfObject(data.node_taints, unmarshalExternalNodeCoreV1Taint),
     poolVersion: data.pool_version,
     runcVersion: data.runc_version,
   } as ExternalNode
@@ -356,9 +330,7 @@ export const unmarshalExternalNodeAuth = (data: unknown): ExternalNodeAuth => {
   } as ExternalNodeAuth
 }
 
-export const unmarshalListClusterACLRulesResponse = (
-  data: unknown,
-): ListClusterACLRulesResponse => {
+export const unmarshalListClusterACLRulesResponse = (data: unknown): ListClusterACLRulesResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ListClusterACLRulesResponse' failed as data isn't a dictionary.`,
@@ -392,9 +364,7 @@ const unmarshalClusterType = (data: unknown): ClusterType => {
   } as ClusterType
 }
 
-export const unmarshalListClusterAvailableTypesResponse = (
-  data: unknown,
-): ListClusterAvailableTypesResponse => {
+export const unmarshalListClusterAvailableTypesResponse = (data: unknown): ListClusterAvailableTypesResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ListClusterAvailableTypesResponse' failed as data isn't a dictionary.`,
@@ -402,17 +372,12 @@ export const unmarshalListClusterAvailableTypesResponse = (
   }
 
   return {
-    clusterTypes: unmarshalArrayOfObject(
-      data.cluster_types,
-      unmarshalClusterType,
-    ),
+    clusterTypes: unmarshalArrayOfObject(data.cluster_types, unmarshalClusterType),
     totalCount: data.total_count,
   } as ListClusterAvailableTypesResponse
 }
 
-export const unmarshalListClusterAvailableVersionsResponse = (
-  data: unknown,
-): ListClusterAvailableVersionsResponse => {
+export const unmarshalListClusterAvailableVersionsResponse = (data: unknown): ListClusterAvailableVersionsResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ListClusterAvailableVersionsResponse' failed as data isn't a dictionary.`,
@@ -424,9 +389,7 @@ export const unmarshalListClusterAvailableVersionsResponse = (
   } as ListClusterAvailableVersionsResponse
 }
 
-export const unmarshalListClusterTypesResponse = (
-  data: unknown,
-): ListClusterTypesResponse => {
+export const unmarshalListClusterTypesResponse = (data: unknown): ListClusterTypesResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ListClusterTypesResponse' failed as data isn't a dictionary.`,
@@ -434,17 +397,12 @@ export const unmarshalListClusterTypesResponse = (
   }
 
   return {
-    clusterTypes: unmarshalArrayOfObject(
-      data.cluster_types,
-      unmarshalClusterType,
-    ),
+    clusterTypes: unmarshalArrayOfObject(data.cluster_types, unmarshalClusterType),
     totalCount: data.total_count,
   } as ListClusterTypesResponse
 }
 
-export const unmarshalListClustersResponse = (
-  data: unknown,
-): ListClustersResponse => {
+export const unmarshalListClustersResponse = (data: unknown): ListClustersResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ListClustersResponse' failed as data isn't a dictionary.`,
@@ -457,9 +415,7 @@ export const unmarshalListClustersResponse = (
   } as ListClustersResponse
 }
 
-export const unmarshalListNodesResponse = (
-  data: unknown,
-): ListNodesResponse => {
+export const unmarshalListNodesResponse = (data: unknown): ListNodesResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ListNodesResponse' failed as data isn't a dictionary.`,
@@ -472,9 +428,7 @@ export const unmarshalListNodesResponse = (
   } as ListNodesResponse
 }
 
-export const unmarshalListPoolsResponse = (
-  data: unknown,
-): ListPoolsResponse => {
+export const unmarshalListPoolsResponse = (data: unknown): ListPoolsResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ListPoolsResponse' failed as data isn't a dictionary.`,
@@ -487,9 +441,7 @@ export const unmarshalListPoolsResponse = (
   } as ListPoolsResponse
 }
 
-export const unmarshalListVersionsResponse = (
-  data: unknown,
-): ListVersionsResponse => {
+export const unmarshalListVersionsResponse = (data: unknown): ListVersionsResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'ListVersionsResponse' failed as data isn't a dictionary.`,
@@ -501,9 +453,7 @@ export const unmarshalListVersionsResponse = (
   } as ListVersionsResponse
 }
 
-const unmarshalNodeMetadataCoreV1Taint = (
-  data: unknown,
-): NodeMetadataCoreV1Taint => {
+const unmarshalNodeMetadataCoreV1Taint = (data: unknown): NodeMetadataCoreV1Taint => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'NodeMetadataCoreV1Taint' failed as data isn't a dictionary.`,
@@ -535,10 +485,7 @@ export const unmarshalNodeMetadata = (data: unknown): NodeMetadata => {
     kubeletConfig: data.kubelet_config,
     name: data.name,
     nodeLabels: data.node_labels,
-    nodeTaints: unmarshalArrayOfObject(
-      data.node_taints,
-      unmarshalNodeMetadataCoreV1Taint,
-    ),
+    nodeTaints: unmarshalArrayOfObject(data.node_taints, unmarshalNodeMetadataCoreV1Taint),
     poolVersion: data.pool_version,
     providerId: data.provider_id,
     repoUri: data.repo_uri,
@@ -550,9 +497,7 @@ export const unmarshalNodeMetadata = (data: unknown): NodeMetadata => {
   } as NodeMetadata
 }
 
-export const unmarshalSetClusterACLRulesResponse = (
-  data: unknown,
-): SetClusterACLRulesResponse => {
+export const unmarshalSetClusterACLRulesResponse = (data: unknown): SetClusterACLRulesResponse => {
   if (!isJSONObject(data)) {
     throw new TypeError(
       `Unmarshalling the type 'SetClusterACLRulesResponse' failed as data isn't a dictionary.`,
@@ -568,10 +513,14 @@ const marshalACLRuleRequest = (
   request: ACLRuleRequest,
   defaults: DefaultValues,
 ): Record<string, unknown> => ({
-  description: request.description,
+  description: request.description,  
   ...resolveOneOf<string | boolean>([
-    { param: 'ip', value: request.ip },
-    { param: 'scaleway_ranges', value: request.scalewayRanges },
+    {param: 'ip',
+      value: request.ip,
+    },
+    {param: 'scaleway_ranges',
+      value: request.scalewayRanges,
+    },
   ]),
 })
 
@@ -579,10 +528,7 @@ export const marshalAddClusterACLRulesRequest = (
   request: AddClusterACLRulesRequest,
   defaults: DefaultValues,
 ): Record<string, unknown> => ({
-  acls:
-    request.acls !== undefined
-      ? request.acls.map(elt => marshalACLRuleRequest(elt, defaults))
-      : undefined,
+  acls: ((request.acls !== undefined) ?  request.acls.map(elt => marshalACLRuleRequest(elt, defaults)): undefined),
 })
 
 const marshalMaintenanceWindow = (
@@ -606,10 +552,7 @@ const marshalCreateClusterRequestAutoUpgrade = (
   defaults: DefaultValues,
 ): Record<string, unknown> => ({
   enable: request.enable,
-  maintenance_window:
-    request.maintenanceWindow !== undefined
-      ? marshalMaintenanceWindow(request.maintenanceWindow, defaults)
-      : undefined,
+  maintenance_window: ((request.maintenanceWindow !== undefined) ?  marshalMaintenanceWindow(request.maintenanceWindow, defaults): undefined),
 })
 
 const marshalCreateClusterRequestAutoscalerConfig = (
@@ -648,7 +591,7 @@ const marshalCreateClusterRequestPoolConfig = (
   autohealing: request.autohealing,
   autoscaling: request.autoscaling,
   container_runtime: request.containerRuntime,
-  kubelet_args: request.kubeletArgs,
+  kubelet_args:  request.kubeletArgs,
   max_size: request.maxSize,
   min_size: request.minSize,
   name: request.name,
@@ -660,13 +603,7 @@ const marshalCreateClusterRequestPoolConfig = (
   security_group_id: request.securityGroupId,
   size: request.size,
   tags: request.tags,
-  upgrade_policy:
-    request.upgradePolicy !== undefined
-      ? marshalCreateClusterRequestPoolConfigUpgradePolicy(
-          request.upgradePolicy,
-          defaults,
-        )
-      : undefined,
+  upgrade_policy: ((request.upgradePolicy !== undefined) ?  marshalCreateClusterRequestPoolConfigUpgradePolicy(request.upgradePolicy, defaults): undefined),
   zone: request.zone,
 })
 
@@ -676,50 +613,26 @@ export const marshalCreateClusterRequest = (
 ): Record<string, unknown> => ({
   admission_plugins: request.admissionPlugins,
   apiserver_cert_sans: request.apiserverCertSans,
-  auto_upgrade:
-    request.autoUpgrade !== undefined
-      ? marshalCreateClusterRequestAutoUpgrade(request.autoUpgrade, defaults)
-      : undefined,
-  autoscaler_config:
-    request.autoscalerConfig !== undefined
-      ? marshalCreateClusterRequestAutoscalerConfig(
-          request.autoscalerConfig,
-          defaults,
-        )
-      : undefined,
+  auto_upgrade: ((request.autoUpgrade !== undefined) ?  marshalCreateClusterRequestAutoUpgrade(request.autoUpgrade, defaults): undefined),
+  autoscaler_config: ((request.autoscalerConfig !== undefined) ?  marshalCreateClusterRequestAutoscalerConfig(request.autoscalerConfig, defaults): undefined),
   cni: request.cni,
   description: request.description,
   feature_gates: request.featureGates,
   name: request.name || randomName('k8s'),
-  open_id_connect_config:
-    request.openIdConnectConfig !== undefined
-      ? marshalCreateClusterRequestOpenIDConnectConfig(
-          request.openIdConnectConfig,
-          defaults,
-        )
-      : undefined,
+  open_id_connect_config: ((request.openIdConnectConfig !== undefined) ?  marshalCreateClusterRequestOpenIDConnectConfig(request.openIdConnectConfig, defaults): undefined),
   pod_cidr: request.podCidr,
-  pools:
-    request.pools !== undefined
-      ? request.pools.map(elt =>
-          marshalCreateClusterRequestPoolConfig(elt, defaults),
-        )
-      : undefined,
+  pools: ((request.pools !== undefined) ?  request.pools.map(elt => marshalCreateClusterRequestPoolConfig(elt, defaults)): undefined),
   private_network_id: request.privateNetworkId,
   service_cidr: request.serviceCidr,
   service_dns_ip: request.serviceDnsIp,
   tags: request.tags,
   type: request.type,
-  version: request.version,
+  version: request.version,  
   ...resolveOneOf([
-    {
-      default: defaults.defaultProjectId,
-      param: 'project_id',
+    {default: defaults.defaultProjectId,param: 'project_id',
       value: request.projectId,
     },
-    {
-      default: defaults.defaultOrganizationId,
-      param: 'organization_id',
+    {default: defaults.defaultOrganizationId,param: 'organization_id',
       value: request.organizationId,
     },
   ]),
@@ -740,8 +653,7 @@ export const marshalCreatePoolRequest = (
   autohealing: request.autohealing,
   autoscaling: request.autoscaling,
   container_runtime: request.containerRuntime,
-  kubelet_args:
-    request.kubeletArgs !== undefined ? request.kubeletArgs : undefined,
+  kubelet_args: ((request.kubeletArgs !== undefined) ?  request.kubeletArgs: undefined),
   max_size: request.maxSize,
   min_size: request.minSize,
   name: request.name || randomName('pool'),
@@ -753,10 +665,7 @@ export const marshalCreatePoolRequest = (
   security_group_id: request.securityGroupId,
   size: request.size,
   tags: request.tags,
-  upgrade_policy:
-    request.upgradePolicy !== undefined
-      ? marshalCreatePoolRequestUpgradePolicy(request.upgradePolicy, defaults)
-      : undefined,
+  upgrade_policy: ((request.upgradePolicy !== undefined) ?  marshalCreatePoolRequestUpgradePolicy(request.upgradePolicy, defaults): undefined),
   zone: request.zone ?? defaults.defaultZone,
 })
 
@@ -764,10 +673,7 @@ export const marshalSetClusterACLRulesRequest = (
   request: SetClusterACLRulesRequest,
   defaults: DefaultValues,
 ): Record<string, unknown> => ({
-  acls:
-    request.acls !== undefined
-      ? request.acls.map(elt => marshalACLRuleRequest(elt, defaults))
-      : undefined,
+  acls: ((request.acls !== undefined) ?  request.acls.map(elt => marshalACLRuleRequest(elt, defaults)): undefined),
 })
 
 export const marshalSetClusterTypeRequest = (
@@ -782,10 +688,7 @@ const marshalUpdateClusterRequestAutoUpgrade = (
   defaults: DefaultValues,
 ): Record<string, unknown> => ({
   enable: request.enable,
-  maintenance_window:
-    request.maintenanceWindow !== undefined
-      ? marshalMaintenanceWindow(request.maintenanceWindow, defaults)
-      : undefined,
+  maintenance_window: ((request.maintenanceWindow !== undefined) ?  marshalMaintenanceWindow(request.maintenanceWindow, defaults): undefined),
 })
 
 const marshalUpdateClusterRequestAutoscalerConfig = (
@@ -823,27 +726,12 @@ export const marshalUpdateClusterRequest = (
 ): Record<string, unknown> => ({
   admission_plugins: request.admissionPlugins,
   apiserver_cert_sans: request.apiserverCertSans,
-  auto_upgrade:
-    request.autoUpgrade !== undefined
-      ? marshalUpdateClusterRequestAutoUpgrade(request.autoUpgrade, defaults)
-      : undefined,
-  autoscaler_config:
-    request.autoscalerConfig !== undefined
-      ? marshalUpdateClusterRequestAutoscalerConfig(
-          request.autoscalerConfig,
-          defaults,
-        )
-      : undefined,
+  auto_upgrade: ((request.autoUpgrade !== undefined) ?  marshalUpdateClusterRequestAutoUpgrade(request.autoUpgrade, defaults): undefined),
+  autoscaler_config: ((request.autoscalerConfig !== undefined) ?  marshalUpdateClusterRequestAutoscalerConfig(request.autoscalerConfig, defaults): undefined),
   description: request.description,
   feature_gates: request.featureGates,
   name: request.name,
-  open_id_connect_config:
-    request.openIdConnectConfig !== undefined
-      ? marshalUpdateClusterRequestOpenIDConnectConfig(
-          request.openIdConnectConfig,
-          defaults,
-        )
-      : undefined,
+  open_id_connect_config: ((request.openIdConnectConfig !== undefined) ?  marshalUpdateClusterRequestOpenIDConnectConfig(request.openIdConnectConfig, defaults): undefined),
   tags: request.tags,
 })
 
@@ -867,10 +755,7 @@ export const marshalUpdatePoolRequest = (
   security_group_id: request.securityGroupId,
   size: request.size,
   tags: request.tags,
-  upgrade_policy:
-    request.upgradePolicy !== undefined
-      ? marshalUpdatePoolRequestUpgradePolicy(request.upgradePolicy, defaults)
-      : undefined,
+  upgrade_policy: ((request.upgradePolicy !== undefined) ?  marshalUpdatePoolRequestUpgradePolicy(request.upgradePolicy, defaults): undefined),
 })
 
 export const marshalUpgradeClusterRequest = (
