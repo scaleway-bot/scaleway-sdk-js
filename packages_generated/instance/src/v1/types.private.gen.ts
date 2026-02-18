@@ -1,37 +1,13 @@
 // This file was automatically generated. DO NOT EDIT.
 // If you have any remark or suggestion do not hesitate to open an issue.
-import type { Zone as ScwZone } from '@scaleway/sdk-client'
-import type {
-  Arch,
-  BootType,
-  Image,
-  PlacementGroup,
-  PrivateNIC,
-  SecurityGroup,
-  SecurityGroupPolicy,
-  SecurityGroupRule,
-  SecurityGroupRuleAction,
-  SecurityGroupRuleDirection,
-  SecurityGroupRuleProtocol,
-  SecurityGroupSummary,
-  Server,
-  ServerAction,
-  ServerIp,
-  ServerIpv6,
-  ServerLocation,
-  ServerMaintenance,
-  ServerState,
-  ServerSummary,
-  Snapshot,
-  SnapshotBaseVolume,
-  SnapshotState,
-  Volume,
-  VolumeVolumeType,
-} from './types.gen.js'
+import type { Zone as ScwZone, } from '@scaleway/sdk-client'
+import type {Arch,BootType,Image,PlacementGroup,PrivateNIC,SecurityGroup,SecurityGroupPolicy,SecurityGroupRule,SecurityGroupRuleAction,SecurityGroupRuleDirection,SecurityGroupRuleProtocol,SecurityGroupSummary,Server,ServerAction,ServerIp,ServerIpv6,ServerLocation,ServerMaintenance,ServerState,ServerSummary,Snapshot,SnapshotBaseVolume,SnapshotState,Volume,VolumeVolumeType,} from './types.gen.js'
+
 
 export interface SetImageResponse {
   image?: Image
 }
+
 
 export type SetSecurityGroupRequest = {
   /**
@@ -85,7 +61,7 @@ export type SetSecurityGroupRequest = {
   /**
    * @deprecated Please use project_default instead.
    */
-  organizationDefault?: boolean
+  organizationDefault: boolean
   /**
    * True use this security group for future Instances created in this project.
    */
@@ -100,9 +76,11 @@ export type SetSecurityGroupRequest = {
   stateful: boolean
 }
 
+
 export interface SetSecurityGroupResponse {
   securityGroup?: SecurityGroup
 }
+
 
 export type SetSecurityGroupRuleRequest = {
   /**
@@ -122,9 +100,11 @@ export type SetSecurityGroupRuleRequest = {
   editable: boolean
 }
 
+
 export interface SetSecurityGroupRuleResponse {
   rule?: SecurityGroupRule
 }
+
 
 export type SetServerRequest = {
   /**
@@ -174,7 +154,7 @@ export type SetServerRequest = {
   /**
    * @deprecated True if IPv6 is enabled (deprecated and always `False` when `routed_ip_enabled` is `True`).
    */
-  enableIpv6?: boolean
+  enableIpv6: boolean
   /**
    * Instance host name.
    */
@@ -253,9 +233,11 @@ export type SetServerRequest = {
   adminPasswordEncryptionSshKeyId?: string
 }
 
+
 export interface SetServerResponse {
   server?: Server
 }
+
 
 export type SetSnapshotRequest = {
   /**
@@ -276,6 +258,9 @@ export type SetSnapshotRequest = {
   tags?: string[]
 }
 
+
 export interface SetSnapshotResponse {
   snapshot?: Snapshot
 }
+
+
