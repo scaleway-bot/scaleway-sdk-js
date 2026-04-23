@@ -327,11 +327,13 @@ export interface BackendStage {
    */
   scalewayLb?: ScalewayLbBackendConfig
   /**
+   * Scaleway Serverless container origin linked to the backend stage.
    *
    * One-of ('backendConfig'): at most one of 'scalewayS3', 'scalewayLb', 'scalewayServerlessContainer', 'scalewayServerlessFunction' could be set.
    */
   scalewayServerlessContainer?: ScalewayServerlessContainerBackendConfig
   /**
+   * Scaleway Serverless function origin linked to the backend stage.
    *
    * One-of ('backendConfig'): at most one of 'scalewayS3', 'scalewayLb', 'scalewayServerlessContainer', 'scalewayServerlessFunction' could be set.
    */
@@ -894,11 +896,13 @@ export type CreateBackendStageRequest = {
    */
   scalewayLb?: ScalewayLbBackendConfig
   /**
+   * Scaleway Serverless container origin linked to the backend stage.
    *
    * One-of ('backendConfig'): at most one of 'scalewayS3', 'scalewayLb', 'scalewayServerlessContainer', 'scalewayServerlessFunction' could be set.
    */
   scalewayServerlessContainer?: ScalewayServerlessContainerBackendConfig
   /**
+   * Scaleway Serverless function origin linked to the backend stage.
    *
    * One-of ('backendConfig'): at most one of 'scalewayS3', 'scalewayLb', 'scalewayServerlessContainer', 'scalewayServerlessFunction' could be set.
    */
@@ -1760,11 +1764,13 @@ export type UpdateBackendStageRequest = {
    */
   scalewayLb?: ScalewayLbBackendConfig
   /**
+   * Scaleway Serverless container origin linked to the backend stage.
    *
    * One-of ('backendConfig'): at most one of 'scalewayS3', 'scalewayLb', 'scalewayServerlessContainer', 'scalewayServerlessFunction' could be set.
    */
   scalewayServerlessContainer?: ScalewayServerlessContainerBackendConfig
   /**
+   * Scaleway Serverless function origin linked to the backend stage.
    *
    * One-of ('backendConfig'): at most one of 'scalewayS3', 'scalewayLb', 'scalewayServerlessContainer', 'scalewayServerlessFunction' could be set.
    */
